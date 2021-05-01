@@ -1,0 +1,62 @@
+@function compassimagehelper-get-list($image) {
+  @if map-has-key($compass-imagehelper-images-map, $image) {
+    $list: map-get($compass-imagehelper-images-map, $image);
+
+    @if type-of($list) == list {
+      @return $list;
+    }
+  } @else {
+    @warn 'Image `#{$image}` not found.';
+    @return false;
+  }
+}
+
+@function image-width($image) {
+  $list: compassimagehelper-get-list($image);
+  $width: nth($list, 1);
+
+  @if (type-of($width) == number) {
+    @return e($width);
+  } @else {
+    @return 0;
+  }
+}
+
+@function image-height($image) {
+  $list: compassimagehelper-get-list($image);
+  $height: nth($list, 2);
+
+  @if (type-of($height) == number) {
+    @return e($height);
+  } @else {
+    @return 0;
+  }
+}
+
+@function image-url($image) {
+  $result: quote('{{{path_prefix}}}' + $image);
+  @return url($result);
+}
+
+@function image-exists($image) {
+  @return map-has-key($compass-imagehelper-images-map, $image);
+}
+
+$compass-imagehelper-images-map: (
+{{#items}}
+  '{{{path}}}': {{width}} {{height}},
+{{/items}}
+);
+{{!
+  data - Data URI string
+  width - Image width in pixels
+  height - Image height in pixels
+  filename - Filename with extension
+  basename - Filename without extension
+  dirname - Name of the images parent directory
+  ext - File Extension including dot, e.g. '.png'
+  path - Filepath relative to the project's images directory
+  fullname - Same as path, but directory separators and dots are replaced by '-'. Useful if you want to generate unique named placeholders.
+  mime - MIME-Type of the file
+  hash - MD5 Hash of the file, used for cache-busting
+}}

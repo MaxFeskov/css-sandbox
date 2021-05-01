@@ -1,0 +1,13 @@
+$units: 'px' !default;
+
+@function rem($px, $root: 16) {
+  @return $px / $root * 1rem;
+}
+
+@function e($px, $unt: $units) {
+  @if ($unt == 'rem') {
+    @return rem($px);
+  } @else {
+    @return $px * 1px;
+  }
+}

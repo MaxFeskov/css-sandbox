@@ -1,0 +1,16 @@
+include base/settings
+
+doctype html
+html(lang='en')
+  head
+    include base/meta/base
+
+    title= 'Css sandbox'
+
+    link(rel="stylesheet", href="/build/css/style.css")
+
+    block head_link
+  body
+    block content
+
+    block footer_link

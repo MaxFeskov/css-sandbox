@@ -1,0 +1,19 @@
+@mixin rootSelector($prefix) {
+  @at-root {
+    @each $selector in & {
+      #{$prefix}#{$selector} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin rootElement($prefix) {
+  @at-root {
+    @each $selector in & {
+      #{$prefix} #{$selector} {
+        @content;
+      }
+    }
+  }
+}
