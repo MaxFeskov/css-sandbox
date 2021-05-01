@@ -2,17 +2,21 @@
   "name": "gulp-css-sandbox",
   "version": "0.0.1",
   "description": "gulp css sandbox",
+  "homepage": "https://maxfeskov.github.io/css-sandbox/",
   "scripts": {
     "build": "gulp build",
     "browserslist": "npx browserslist",
     "clean": "gulp clean",
-    "dev": "gulp"
+    "dev": "gulp",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "bemto.pug": "^2.1.0",
     "browser-sync": "^2.26.14",
     "cssnano": "^4.1.10",
     "del": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-cached": "^1.1.1",
     "gulp-cli": "^2.3.0",

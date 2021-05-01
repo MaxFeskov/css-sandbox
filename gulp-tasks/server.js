@@ -12,7 +12,7 @@ gulp.task('server:init', () => {
       },
     ],
     port: 8080,
-    server: { baseDir: './' },
+    server: { baseDir: './build' },
     reloadDelay: 75,
   });
 });

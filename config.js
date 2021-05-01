@@ -5,7 +5,7 @@ const srcPath = {
 };
 
 const buildPath = {
-  html: './',
+  html: './build/',
   style: './build/css/',
   image: './build/img/',
 };
