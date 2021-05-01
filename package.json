@@ -1,13 +1,12 @@
 {
-  "name": "gulp-boilerplate-typescript",
+  "name": "gulp-css-sandbox",
   "version": "0.0.1",
-  "description": "gulp boilerplate typescript",
+  "description": "gulp css sandbox",
   "scripts": {
     "build": "gulp build",
     "browserslist": "npx browserslist",
     "clean": "gulp clean",
-    "dev": "gulp",
-    "imagehelper": "gulp imagehelper"
+    "dev": "gulp"
   },
   "devDependencies": {
     "bemto.pug": "^2.1.0",
@@ -19,6 +18,7 @@
     "gulp-cli": "^2.3.0",
     "gulp-compass-imagehelper": "^1.0.2",
     "gulp-htmllint": "0.0.19",
+    "gulp-imagemin": "^7.1.0",
     "gulp-insert": "^0.5.0",
     "gulp-jsbeautifier": "^3.0.1",
     "gulp-load-plugins": "^2.0.6",
@@ -32,6 +32,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "imagemin-pngquant": "^9.0.2",
     "postcss": "^8.2.6",
     "postcss-animation": "^0.0.12",
     "postcss-flexbugs-fixes": "^5.0.2",

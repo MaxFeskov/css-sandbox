@@ -25,13 +25,14 @@ requireDir('./gulp-tasks', { recurse: true });
 
 gulp.task(
   'clean',
-  gulp.parallel('clean:style', 'clean:html'),
+  gulp.parallel('clean:image', 'clean:style', 'clean:html'),
 );
 
 gulp.task(
   'build',
   gulp.series(
     'clean',
+    'build:image',
     'build:style',
     'build:html',
   ),
@@ -39,12 +40,13 @@ gulp.task(
 
 gulp.task(
   'watch',
-  gulp.parallel('watch:style', 'watch:html'),
+  gulp.parallel('watch:image', 'watch:style', 'watch:html'),
 );
 
 gulp.task(
   'dev',
   gulp.series(
+    'dev:image',
     'dev:style',
     'dev:html',
   ),
