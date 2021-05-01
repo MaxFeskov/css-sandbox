@@ -1,0 +1,23 @@
+@import 'main';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: image-url('lv/stone-art.jpg') no-repeat;
+  background-size: cover;
+}
+
+.lv-translucent-borders {
+  max-width: 20em;
+  padding: 2em;
+  line-height: 1.5em;
+  background: white;
+  background-clip: padding-box;
+  border: 10px solid rgba(white, 0.5);
+}
